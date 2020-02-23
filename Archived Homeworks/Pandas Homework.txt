@@ -1,0 +1,31 @@
+import pandas as pd
+
+### Player Count
+
+data = pd.read_csv("Resources/purchase_data.csv")
+data
+
+total_players = data["SN"].drop_duplicates().count()
+df_players = pd.DataFrame({"Total Players": [total_players]})
+
+df_players
+
+total_items = data["Item ID"].drop_duplicates().count()
+total_items
+
+average_price = data["Price"].mean()
+average_price
+
+total_price = data["Price"].sum()
+total_price
+
+purchase_count = data["Purchase ID"].drop_duplicates().count()
+purchase_count
+
+df_purchasing_analysis = pd.DataFrame({"Total Items": [total_items], "Average Price": [average_price], 
+                                     "Total Price": [total_price], "Purchase Count": [purchase_count] 
+                                      })
+df_purchasing_analysis
+
+
+
